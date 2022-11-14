@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BnyroGO</title>
+</head>
+<body>
+    <div id="title">
+        <h1>BnyroGO</h1>
+    </div>
+    <div id="container">
+        <input type="text" id="input" onkeyup="onKeyUp(event)">
+        <button onclick="search()">Search</button>
+    </div>
+</body>
+</html>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+    
+    :root {
+            
+    }    
+    
+    html {
+        font-family: Arial, sans-serif;
+    }
+        
+    body {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 95vh;
+    }
+        
+    #container {
+        display: flex;
+        flex-direction: column;        
+        width: min-content;
+    }
+        
+    #search {
+        width: 100%;        
+    }
+</style>
+
+<script>
+    const baseURL = "https://paulgo.io";
+    
+    let $ = document.querySelector.bind(document);
+        
+    function search() {
+        if (!$('#input').value) return;
+        window.location.href = baseURL + "/search?q=" + $('#input').value;        
+    }
+        
+    function onKeyUp({key}) {
+        if (key !== "Enter") return;
+        search();
+    }
+</script>
