@@ -7,9 +7,15 @@
     <title>BnyroGO</title>
 </head>
 <body>
-    <div id="title">
-        <h1>BnyroGO</h1>
-    </div>
+    <h1 id="title">
+        <span id="b">B</span>
+        <span id="n">n</span>
+        <span id="y">y</span>
+        <span id="r">r</span>
+        <span id="o-1">o</span>
+        <span id="g">G</span>
+        <span id="o-2">O</span>
+    </h1>
     <div id="container">
         <input type="text" id="input" onkeyup="onKeyUp(event)">
         <button id="search" onclick="search()">Search</button>
@@ -41,7 +47,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        min-height: 95vh;
+        min-height: 90vh;
     }
         
     #container {
@@ -81,6 +87,43 @@
         
     #search {
         width: 100%;        
+        font-weight: 500;
+    }
+    
+    #title {
+        white-space: pre-wrap;    
+        display: flex;
+        font-size: 4rem;
+        font-weight: 300;
+        margin: 2rem 0;
+    }
+                
+    #title #b {
+        color: #eb6f92;
+    }
+
+    #title #n {
+        color: #f6c177;
+    }
+
+    #title #y {
+        color: #ebbcba;
+    }
+
+    #title #r {
+        color: #31748f;
+    }
+
+    #title #o-1 {
+        color: #9ccfd8;
+    }
+
+    #title #g {
+        color: #c4a7e7;
+    }
+
+    #title #o-2 {
+        color: #908caa;
     }
 </style>
 
