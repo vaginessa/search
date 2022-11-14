@@ -12,7 +12,7 @@
     </div>
     <div id="container">
         <input type="text" id="input" onkeyup="onKeyUp(event)">
-        <button onclick="search()">Search</button>
+        <button id="search" onclick="search()">Search</button>
     </div>
 </body>
 </html>
@@ -23,11 +23,16 @@
     }
     
     :root {
-            
+        --bg: #191724;
+        --text: #e0def4;
+        --element-bg: #1f1d2e;
+        --radius: 0.5rem;
     }    
-    
+
     html {
         font-family: Arial, sans-serif;
+        background: var(--bg);
+        color: var(--text);
     }
         
     body {
@@ -42,7 +47,36 @@
     #container {
         display: flex;
         flex-direction: column;        
-        width: min-content;
+        width: 50vw;
+        padding: 0.2rem;
+        border-radius: var(--radius);
+        background: var(--element-bg);
+    }
+    
+    #container>* {
+        padding: 0.5rem 0.3rem;
+        border: none;  
+    }
+    
+    #search {
+        background: var(--element-bg);
+        color: var(--text);
+        cursor: pointer;
+        border-radius: var(--radius);
+        transition: 0.3s ease-in-out filter;
+    }
+    
+    #search:hover {
+        filter: brightness(1.2);    
+    }
+    
+    #input {
+        background: var(--bg);
+        color: var(--text);
+    }
+                
+    #input:focus {
+        outline: none;
     }
         
     #search {
