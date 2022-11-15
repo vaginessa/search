@@ -137,8 +137,11 @@
     let $ = document.querySelector.bind(document);
         
     function search() {
-        if (!$('#input').value) return;
-        window.location.href = baseURL + "/search?q=" + $('#input').value;        
+        const query = $('#input').value;
+        if (!query) return;
+        const url = new URL("/search", baseURL);
+        url.searchParams.append("q", query);
+        window.location.href = url;
     }
         
     function onKeyUp({key}) {
