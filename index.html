@@ -17,10 +17,10 @@
         <span id="g">G</span>
         <span id="o-2">O</span>
     </h1>
-    <div id="container">
-        <input type="text" id="input" onkeyup="onKeyUp(event)" autofocus>
-        <button id="search" onclick="search()">Search</button>
-    </div>
+    <form id="container" method="get" action="https://gruble.de/search">
+        <input type="text" name="q" id="input" autofocus required>
+        <input type="submit">Search</button>
+    </form>
 </body>
 </html>
 
@@ -131,21 +131,3 @@
     }
 </style>
 
-<script>
-    const baseURL = "https://gruble.de";
-    
-    let $ = document.querySelector.bind(document);
-        
-    function search() {
-        const query = $('#input').value;
-        if (!query) return;
-        const url = new URL("/search", baseURL);
-        url.searchParams.append("q", query);
-        window.location.href = url;
-    }
-        
-    function onKeyUp({key}) {
-        if (key !== "Enter") return;
-        search();
-    }
-</script>
